@@ -7,7 +7,7 @@ const blogSchema=mongoose.Schema({
     category:{type:String,enum:["Business","Tech","Lifestyle","Entertainment"],required:true},
     date:{type:Date,required:true},
     likes:{type:Number},
-    comments:[{username:String,content:String}]
+    comments:{type:Array}
 
 })
 
