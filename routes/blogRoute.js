@@ -7,7 +7,7 @@ const blogRoute=express.Router();
 blogRoute.post('/',async(req,res)=>{
     try{
         const {username,title,content,category,date}=req.body
-        const post=new BlogModel({username,title,content,category,date,likes:0,comments:[{"username":"","content":""}]})
+        const post=new BlogModel({username,title,content,category,date,likes:0,comments:[]})
         await post.save()
          res.status(201).send({"msg":"New Details Added"}) 
     }catch(err){
